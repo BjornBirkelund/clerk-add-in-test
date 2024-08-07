@@ -16,7 +16,7 @@ Office.onReady(() => {
   const PUBLISHABLE_KEY = "pk_live_Y2xlcmsuZmlsb3QuYWkk";
   const FRONTEND_URL = "https://test.filot.ai";
   root?.render(
-    <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignInUrl={FRONTEND_URL}>
+    <ClerkProvider publishableKey={PUBLISHABLE_KEY} signInFallbackRedirectUrl={FRONTEND_URL}>
       <FluentProvider theme={webLightTheme}>
         <App title={title} />
       </FluentProvider>
@@ -28,7 +28,7 @@ if (module.hot) {
   module.hot.accept("./components/App", () => {
     const NextApp = require("./components/App").default;
     root?.render(
-      <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignInUrl={FRONTEND_URL}>
+      <ClerkProvider publishableKey={PUBLISHABLE_KEY} signInFallbackRedirectUrl={FRONTEND_URL}>
         <FluentProvider theme={webLightTheme}>
           <NextApp title={title} />
         </FluentProvider>
